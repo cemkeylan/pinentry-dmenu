@@ -1,0 +1,18 @@
+#!/bin/sh
+
+printf "OK Pleased to meet you\n"
+
+# shellcheck disable=SC2162
+while read stdin; do
+	command="$(printf "$stdin\n" | tr '[:lower:]' '[:upper:]')"
+	if [ "$command" = "BYE" ] ; then
+		break
+	elif [ "$command" = "GETPIN" ] ; then
+		printf "D $(DISPLAY=:0 pinentry-dmenu-core -P -p "Passphrase:")\n"
+		printf "OK\n"
+	else
+		printf "OK\n"
+	fi
+done
+
+return 0
