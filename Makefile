@@ -44,7 +44,9 @@ install: all
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/pinentry-dmenu
 
 pinentry-install:
-	install -Dm755 pinentry-dmenu $(DESTDIR)$(PREFIX)/bin/pinentry-dmenu
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
+	sed 's#pinentry-dmenu-core#dmenu#g' < pinentry-dmenu > $(DESTDIR)$(PREFIX)/bin/pinentry-dmenu
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/pinentry-dmenu
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/pinentry-dmenu-core
