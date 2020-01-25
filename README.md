@@ -2,8 +2,8 @@ pinentry-dmenu
 ==============
 
 This is the program I came up with when I
-decided to merge the ideas of pinentry-dmenu[1]
-and pinentry-dmenu[2]. Ladies and gentlemen, may
+decided to merge the ideas of pinentry-dmenu [1]
+and pinentry-dmenu [2]. Ladies and gentlemen, may
 I present you, pinentry-dmenu!
 
 Why?
